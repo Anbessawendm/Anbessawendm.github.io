@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html> -->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>second web page.</title>
+		  <style>
+		    h1, h2, h3, h4, h5 {color: #FF0000;}
+
+		    #container {
+		    	margin-left: 20px;
+		    	margin-right: 20px;
+		    }
+
+		    #photo {
+		    	padding: 20px;
+
+		    	.caption {
+		    		font-style: Calibri;
+		    		font-weight: bold;
+		    	}
+
+		    	#abuneyemata {
+		    		border: red solid;
+		    		border-width: 5px;
+		    	}
+		    }
+
+		    #description {
+
+		    }
+
+
+		  </style>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+		  </script>
+		<head>
+	<body>
+		<div id="container">
+			<h1>My second web page!</h1>
+			    
+			<p>This is the fifth lab502 for GIS3410 web mapping, from MSU Denver.</p>
+			<div id="photo">
+				<img id="abuneyemata" alt="abune yemata church" src="https://th.bing.com/th/id/OIP.j5vPogtvbFAVqgR9hSI9tQHaFA?pid=ImgDet&rs=1" alt="abune yemata church"></img><br>
+			    <p class = "caption"> written by Anbessawendm.</p>
+			    <p class = "caption"> photo by CarnivalRow.</p>
+			    <button id="description_btn" type="button">Toggle image and description</button>
+			</div>
+			
+			<div id="description">
+				<p><strong>Abune Yemata Church is located in Tigray, Ethiopia.</strong>
+				While many of the Tigray churches are dug into the ground or monolithic with roofs at ground level, the church at Abuna Yemata Guh is pure-play rock-hewn. Almost a part of the mountains of the Hawzen Woreda it blends with the vertical rock spire in the rugged mountainside.
+				With so many ancient rock churches to choose from, the one at Abuna Yemata Guh tests your spiritual rigour as much as physical prowess. The trek up to the church is dangerous and adrenaline-high, testing both your patience and resilience. The church itself is perched dangerously on the cliff-side, with a 200-250 m drop on the sides, making you wonder how families grit it out to visit the church for Sunday services. To reach it, you must scale a sheer wall of rock and inch along a precipitous ledge, all in bare feet because you are on holy ground. Is it any wonder that Abuna Yemata Guh is said to be the world’s least accessible places of worship.</p>
+			</div>
+			   
+			<div id="Landscape">
+				<head>
+			       <strong><h3>Landscape.</h3></strong>
+				</head>
+			 	<p>The landscape of the area is unique it is a place where you can hiking and there are traditional resort and hotels.</p>
+			<div/>
+			<div id="Lists">
+				<head>
+				  <strong><h4>Place to visit.</h4></strong>
+				</head>
+				<ul>
+					<li>Abraha Atsbeha church.</li>
+					<li>Axum.</li>
+					<li>Mekelle.</li>
+					<li>Lalibela.</li>
+				</ul>
+			</div>
+			<button id="bonus-info" type="button">View Button Information</button>
+			<div id="Bonus">
+				<head>
+				  <strong><h4>Bonus Information.</h4></strong>
+				</head>
+				<p id="bonus-statement">
+					If you are looking to visit Abune Yemata Church. A nice place to room would be in <strong>Gheralta Lodge</strong>.
+				</p>
+				<img id="lodge" alt="abune yemata church" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/27/17/9c/gheralta-lodge.jpg?w=1400&h=-1&s=1" alt="Gheralta Lodge" width="500px" height="500px"></img><br>
+				<button id="change-info" type="button">Click Here After You Have Finished Reading.</button>
+				<button id="get-phone" type="button">Get Resort Phone Number.</button>
+			</div>
+			<div id="contact">
+			    <head>
+					<strong><h5>Contact details.</h5></strong>
+				</head>
+				<p>Tigray Tourism.</p>
+			</div>
+		  <div>
+		  <script>
+		  	// the following guarantee's that the javascript runs after all of the webpage has loaded
+		  	$(document).ready(function () {
+		  		$(".caption").hide(); //hides the description of the image
+		  		$("#abuneyemata").hide(); //hides the image
+		  		$("#Bonus").hide(); //hide bonus information section
+		  		$("#get-phone").hide(); //hide get phone button
+		  		$("#description_btn").click(function() {
+		  			console.log("Description Button Clicked.");
+		  			//toggle image & image description on & off
+		  			$(".caption").toggle();
+		  			$("#abuneyemata").fadeToggle();
+		  		});
+		  		$("#bonus-info").click(function() {
+		  			console.log("Bonus Section Button Clicked.");
+		  			//display bonus section
+		  			$("#Bonus").show();
+		  			$("#bonus-info").hide();
+		  		});
+		  		$("#change-info").click(function() {
+		  			console.log("New Bonus Information Button Clicked.")
+		  			$("#bonus-statement").text("You can also room in other cities and travel there for a few hours.");
+		  			$("#change-info").hide();
+		  			$("#get-phone").show();
+		  		});
+		  		$("#get-phone").click(function() {
+		  			console.log("View Phone Number Button Clicked")
+		  			$("#bonus-statement").html("<strong> +251 93 538 1711 <strong>");
+		  			$("#get-phone").hide();
+		  		});
+		  	});
+
+		  </script>
+	</body>
+</html>
