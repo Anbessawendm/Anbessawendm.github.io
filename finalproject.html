@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title></title>
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<style>
+  		#map {
+			height: 375px; width: 705px;
+		}
+		#header {
+			border-style: dashed;
+			h1, p {
+				color: blue;
+			}
+		}
+		
+  	</style>
+	<script>
+		$(document).ready(function() {
+			
+			map = L.map('map').setView([0,0], 10);
+
+			// add openstreetmap tile layer to map element
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			    maxZoom: 20,
+			    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+			}).addTo(map);
+			
+			$.getJSON('./York_Clean_Air_Zone.geojson', function(data) {
+				yorkEnglandLayer = L.geoJSON(data).addTo(map);
+				map.panTo(yorkEnglandLayer.getBounds().getCenter());				
+			});
+
+			$('#hideMap').click(function() {
+				$('#map').hide();
+			});
+
+			$('#showMap').click(function() {
+				$('#map').show();
+			});
+		});
+	</script>
+  </head>
+  <body>
+    <div id="header"> 
+      <h1>York Clear Air Zones</h1>
+      <p>Data from <a href="https://data.yorkopendata.org/dataset/york-clean-air-zone-buses/resource/587e6a69-3917-49fe-a2c7-5ed10ea0508d">City of York Council</a></p>
+    </div>
+    <div id="map"></div>
+    <button id="hideMap" type="button">Hide Map</button>
+    <button id="showMap" type="button">Show Map</button>
+  </body>
+</html>
